@@ -1,320 +1,509 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <div className="min-h-screen">
-      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+    <div className="min-h-screen bg-background">
+      <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Здоровое Питание
+            <div className="flex items-center gap-2">
+              <Icon name="Cpu" size={32} className="text-primary" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                CryptoMiner Pro
+              </span>
             </div>
-            <div className="hidden md:flex gap-6">
-              <button onClick={() => scrollToSection('home')} className="hover:text-primary transition">Главная</button>
-              <button onClick={() => scrollToSection('about')} className="hover:text-primary transition">Обо мне</button>
-              <button onClick={() => scrollToSection('services')} className="hover:text-primary transition">Услуги</button>
-              <button onClick={() => scrollToSection('benefits')} className="hover:text-primary transition">Преимущества</button>
-              <button onClick={() => scrollToSection('pricing')} className="hover:text-primary transition">Тарифы</button>
-              <button onClick={() => scrollToSection('reviews')} className="hover:text-primary transition">Отзывы</button>
-              <button onClick={() => scrollToSection('faq')} className="hover:text-primary transition">Вопросы</button>
-              <button onClick={() => scrollToSection('contacts')} className="hover:text-primary transition">Контакты</button>
+            <div className="hidden md:flex items-center gap-6">
+              <a href="#about" className="text-foreground hover:text-primary transition">О нас</a>
+              <a href="#antminer" className="text-foreground hover:text-primary transition">ANTMINER</a>
+              <a href="#whatsminer" className="text-foreground hover:text-primary transition">WHATSMINER</a>
+              <a href="#payment" className="text-foreground hover:text-primary transition">Оплата и доставка</a>
+              <a href="#contacts" className="text-foreground hover:text-primary transition">Контакты</a>
             </div>
-            <Button onClick={() => scrollToSection('contacts')} className="bg-gradient-to-r from-primary to-secondary">
-              Записаться
+            <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+              <Icon name="ShoppingCart" size={20} className="mr-2" />
+              Заказать
             </Button>
           </div>
         </nav>
       </header>
 
-      <section id="home" className="pt-32 pb-20 px-4 bg-gradient-to-br from-green-50 via-orange-50 to-purple-50">
+      <section className="pt-32 pb-20 px-4">
+        <div className="container mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+            Майнинговое оборудование ANTMINER & WHATSMINER
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Прямые поставки от производителей. Огромный ассортимент. Быстрый старт вашего майнинг-бизнеса.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+              <Icon name="Zap" size={20} className="mr-2" />
+              Начать зарабатывать
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+              <Icon name="PlayCircle" size={20} className="mr-2" />
+              Узнать больше
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="advantages" className="py-20 px-4 bg-card/50">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Замучили диеты и срывы? 😑
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Хотите по-настоящему полюбить здоровый образ жизни?
-              </p>
-              <p className="text-lg">
-                Научимся питаться правильно и вести Здоровый образ жизни, уберем вредное питание и вредные привычки, начнем новую жизнь!
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" onClick={() => scrollToSection('contacts')} className="bg-gradient-to-r from-primary to-secondary text-lg">
-                  Начать сейчас
-                </Button>
-                <Button size="lg" variant="outline" onClick={() => scrollToSection('about')}>
-                  Узнать больше
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
-              <img 
-                src="https://cdn.poehali.dev/projects/edc8d123-107a-4322-b4c6-9be434859e1f/files/c7fcf525-67b3-494b-984a-ce2b7749215c.jpg" 
-                alt="Здоровое питание" 
-                className="relative rounded-3xl shadow-2xl w-full"
-              />
-            </div>
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Почему выбирают нас
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                  <Icon name="Truck" size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Прямые поставки</h3>
+                <p className="text-muted-foreground">Работаем напрямую с производителями, без посредников</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                  <Icon name="Package" size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Огромный ассортимент</h3>
+                <p className="text-muted-foreground">Широкий выбор оборудования для любых задач</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                  <Icon name="TrendingUp" size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Успех и доходность</h3>
+                <p className="text-muted-foreground">Проверенное оборудование с высокой окупаемостью</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                  <Icon name="Rocket" size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Быстрый старт</h3>
+                <p className="text-muted-foreground">Начните майнить уже через несколько дней</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       <section id="about" className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl blur-3xl"></div>
-              <img 
-                src="https://cdn.poehali.dev/projects/edc8d123-107a-4322-b4c6-9be434859e1f/files/e7156827-e85b-4c33-b718-95a7dbea0081.jpg" 
-                alt="Александр Самолучшев" 
-                className="relative rounded-3xl shadow-2xl w-full"
-              />
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Обо мне
-              </h2>
-              <p className="text-xl">
-                Всем привет, я <span className="font-bold text-primary">Александр Самолучшев</span> — ваш проводник в мир здорового питания!
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Веду здоровый образ жизни, активно занимаюсь спортом, более 10 лет я сам экспериментирую с питанием, и теперь, как интегративный Нутрициолог (обучение в Talentsy), хочу поделиться с вами своими знаниями и опытом.
-              </p>
-              <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl">
-                <Icon name="Award" className="text-primary" size={32} />
-                <div>
-                  <div className="font-bold">Интегративный нутрициолог</div>
-                  <div className="text-sm text-muted-foreground">Обучение в Talentsy</div>
-                </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              О нас
+            </h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              Мы являемся официальным поставщиком майнингового оборудования ведущих мировых производителей - ANTMINER и WHATSMINER. 
+              Наша компания специализируется на прямых поставках высокопроизводительного оборудования для майнинга криптовалют.
+            </p>
+            <p className="text-lg text-muted-foreground mb-6">
+              За годы работы мы помогли сотням клиентов начать успешный майнинг-бизнес. Мы предлагаем только проверенное 
+              оборудование с гарантией производителя и полной технической поддержкой.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mt-10">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">500+</div>
+                <div className="text-muted-foreground">Довольных клиентов</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">3 года</div>
+                <div className="text-muted-foreground">На рынке</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+                <div className="text-muted-foreground">Поддержка клиентов</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-gradient-to-br from-purple-50 via-green-50 to-orange-50">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              🍴 Забудьте про строгие диеты и голодовки!
-            </h2>
-            <p className="text-xl text-muted-foreground">Здесь вы найдете:</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: "UtensilsCrossed", title: "Индивидуальный рацион", desc: "Подбор рациона питания индивидуально под ваши цели" },
-              { icon: "Lightbulb", title: "Простые советы", desc: "Реальные и простые советы, как сделать здоровое питание вкусным и разнообразным" },
-              { icon: "FileText", title: "Подробный разбор", desc: "Подробный разбор питания и образа жизни" },
-              { icon: "ChefHat", title: "Проверенные рецепты", desc: "Проверенные рецепты, которые не испортят фигуру" },
-              { icon: "Zap", title: "Мотивация", desc: "Мотивацию для активной жизни без насилия над собой" },
-              { icon: "MessageCircle", title: "Ответы на вопросы", desc: "Разберем составы продуктов, оценим пользу блюд" }
-            ].map((service, idx) => (
-              <Card key={idx} className="border-2 hover:shadow-xl transition-all hover:scale-105 bg-white/80 backdrop-blur">
-                <CardContent className="p-6 space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                    <Icon name={service.icon} className="text-white" size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="benefits" className="py-20 px-4">
+      <section id="antminer" className="py-20 px-4 bg-card/50">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Почему стоит выбрать меня
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { icon: "Target", title: "Индивидуальный подход", desc: "Каждая программа разрабатывается под ваши цели и особенности" },
-              { icon: "TrendingUp", title: "Более 10 лет опыта", desc: "Личный опыт экспериментов с питанием и результаты" },
-              { icon: "Heart", title: "Без насилия над собой", desc: "Здоровый образ жизни должен приносить удовольствие" },
-              { icon: "Users", title: "Поддержка сообщества", desc: "Создадим сообщество единомышленников для взаимной мотивации" }
-            ].map((benefit, idx) => (
-              <Card key={idx} className="border-2 hover:shadow-lg transition-all">
-                <CardContent className="p-8 flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0">
-                    <Icon name={benefit.icon} className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-muted-foreground">{benefit.desc}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" className="py-20 px-4 bg-gradient-to-br from-green-50 via-purple-50 to-orange-50">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Тарифы
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { 
-                name: "Старт", 
-                price: "5 000", 
-                features: ["Консультация 60 минут", "Анализ текущего питания", "План питания на неделю", "Рекомендации по образу жизни"],
-                gradient: "from-green-500 to-emerald-600"
-              },
-              { 
-                name: "Оптимум", 
-                price: "15 000", 
-                features: ["3 консультации", "Индивидуальный план на месяц", "Разбор анализов", "Поддержка в чате", "Корректировки рациона"],
-                gradient: "from-orange-500 to-amber-600",
-                popular: true
-              },
-              { 
-                name: "Премиум", 
-                price: "30 000", 
-                features: ["Сопровождение 3 месяца", "Безлимитные консультации", "Разбор анализов", "Круглосуточная поддержка", "Рецепты и списки покупок"],
-                gradient: "from-purple-500 to-violet-600"
-              }
-            ].map((plan, idx) => (
-              <Card key={idx} className={`border-2 hover:shadow-2xl transition-all ${plan.popular ? 'scale-105 border-primary shadow-xl' : ''}`}>
-                {plan.popular && (
-                  <div className="bg-gradient-to-r from-primary to-secondary text-white text-center py-2 rounded-t-xl font-bold">
-                    Популярный
-                  </div>
-                )}
-                <CardContent className="p-8 space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <div className="flex items-baseline gap-1">
-                      <span className={`text-4xl font-bold bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>{plan.price}</span>
-                      <span className="text-muted-foreground">₽</span>
-                    </div>
-                  </div>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={20} />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    className={`w-full bg-gradient-to-r ${plan.gradient}`}
-                    size="lg"
-                    onClick={() => scrollToSection('contacts')}
-                  >
-                    Выбрать тариф
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Отзывы клиентов
+            ANTMINER
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { name: "Мария К.", text: "За 2 месяца работы с Александром я похудела на 8 кг, но главное — научилась питаться правильно! Теперь это образ жизни, а не временная диета.", rating: 5 },
-              { name: "Дмитрий П.", text: "Александр помог мне набрать мышечную массу без вредных добавок. Очень доволен результатом и профессионализмом!", rating: 5 },
-              { name: "Елена С.", text: "Наконец-то нашла специалиста, который не заставляет голодать! Вкусные рецепты, поддержка 24/7 и результаты уже через месяц!", rating: 5 }
-            ].map((review, idx) => (
-              <Card key={idx} className="border-2 hover:shadow-lg transition-all">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex gap-1">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Icon key={i} name="Star" className="text-secondary fill-secondary" size={20} />
-                    ))}
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-center mb-4">
+                  <Icon name="HardDrive" size={48} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-center">ANTMINER S19 Pro</h3>
+                <div className="space-y-2 text-muted-foreground mb-4">
+                  <div className="flex justify-between">
+                    <span>Хешрейт:</span>
+                    <span className="text-foreground font-semibold">110 TH/s</span>
                   </div>
-                  <p className="text-muted-foreground italic">"{review.text}"</p>
-                  <div className="font-bold">{review.name}</div>
-                </CardContent>
-              </Card>
-            ))}
+                  <div className="flex justify-between">
+                    <span>Потребление:</span>
+                    <span className="text-foreground font-semibold">3250 W</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Алгоритм:</span>
+                    <span className="text-foreground font-semibold">SHA-256</span>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                  Узнать цену
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-center mb-4">
+                  <Icon name="HardDrive" size={48} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-center">ANTMINER S21</h3>
+                <div className="space-y-2 text-muted-foreground mb-4">
+                  <div className="flex justify-between">
+                    <span>Хешрейт:</span>
+                    <span className="text-foreground font-semibold">200 TH/s</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Потребление:</span>
+                    <span className="text-foreground font-semibold">3500 W</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Алгоритм:</span>
+                    <span className="text-foreground font-semibold">SHA-256</span>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                  Узнать цену
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-center mb-4">
+                  <Icon name="HardDrive" size={48} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-center">ANTMINER L7</h3>
+                <div className="space-y-2 text-muted-foreground mb-4">
+                  <div className="flex justify-between">
+                    <span>Хешрейт:</span>
+                    <span className="text-foreground font-semibold">9500 MH/s</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Потребление:</span>
+                    <span className="text-foreground font-semibold">3425 W</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Алгоритм:</span>
+                    <span className="text-foreground font-semibold">Scrypt</span>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                  Узнать цену
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      <section id="faq" className="py-20 px-4 bg-gradient-to-br from-orange-50 via-green-50 to-purple-50">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Вопросы и ответы
+      <section id="whatsminer" className="py-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            WHATSMINER
           </h2>
-          <Accordion type="single" collapsible className="space-y-4">
-            {[
-              { q: "Как быстро я увижу результаты?", a: "Первые изменения вы заметите уже через 1-2 недели. Устойчивый результат формируется за 2-3 месяца, когда здоровое питание становится привычкой." },
-              { q: "Нужно ли будет голодать?", a: "Абсолютно нет! Моя философия — питание должно быть сытным и вкусным. Мы научимся выбирать правильные продукты, а не ограничивать себя во всем." },
-              { q: "Подойдет ли мне программа, если у меня есть заболевания?", a: "Да, я разрабатываю индивидуальные программы с учетом ваших особенностей здоровья. При необходимости порекомендую проконсультироваться с врачом." },
-              { q: "Что если мне не подойдет программа?", a: "Я всегда на связи и корректирую план под ваши потребности. Ваш комфорт и результат — моя главная цель!" },
-              { q: "Нужно ли покупать специальные продукты?", a: "Нет, мы будем работать с обычными продуктами, которые есть в любом магазине. Никаких дорогих суперфудов и специальных добавок." }
-            ].map((item, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`} className="bg-white rounded-xl border-2 px-6">
-                <AccordionTrigger className="text-left font-bold hover:text-primary">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-center mb-4">
+                  <Icon name="Server" size={48} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-center">WHATSMINER M30S++</h3>
+                <div className="space-y-2 text-muted-foreground mb-4">
+                  <div className="flex justify-between">
+                    <span>Хешрейт:</span>
+                    <span className="text-foreground font-semibold">112 TH/s</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Потребление:</span>
+                    <span className="text-foreground font-semibold">3472 W</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Алгоритм:</span>
+                    <span className="text-foreground font-semibold">SHA-256</span>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                  Узнать цену
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-center mb-4">
+                  <Icon name="Server" size={48} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-center">WHATSMINER M50</h3>
+                <div className="space-y-2 text-muted-foreground mb-4">
+                  <div className="flex justify-between">
+                    <span>Хешрейт:</span>
+                    <span className="text-foreground font-semibold">126 TH/s</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Потребление:</span>
+                    <span className="text-foreground font-semibold">3306 W</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Алгоритм:</span>
+                    <span className="text-foreground font-semibold">SHA-256</span>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                  Узнать цену
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:border-primary transition">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-center mb-4">
+                  <Icon name="Server" size={48} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-center">WHATSMINER M60</h3>
+                <div className="space-y-2 text-muted-foreground mb-4">
+                  <div className="flex justify-between">
+                    <span>Хешрейт:</span>
+                    <span className="text-foreground font-semibold">172 TH/s</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Потребление:</span>
+                    <span className="text-foreground font-semibold">3344 W</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Алгоритм:</span>
+                    <span className="text-foreground font-semibold">SHA-256</span>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                  Узнать цену
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="payment" className="py-20 px-4 bg-card/50">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Оплата и доставка
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="bg-card border-border">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                    <Icon name="CreditCard" size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Способы оплаты</h3>
+                </div>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Банковский перевод
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Оплата наличными при получении
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Криптовалюта (BTC, USDT)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Рассрочка и лизинг
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                    <Icon name="Truck" size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Доставка</h3>
+                </div>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Доставка по всей России
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Курьерская доставка в крупных городах
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Самовывоз из нашего склада
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={20} className="text-primary" />
+                    Отправка транспортными компаниями
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       <section id="contacts" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-gradient-to-br from-primary via-secondary to-accent rounded-3xl p-12 text-white text-center space-y-6 shadow-2xl">
-            <h2 className="text-4xl font-bold">
-              Готовы изменить свою жизнь к лучшему?
-            </h2>
-            <p className="text-xl opacity-90">
-              Вместе мы создадим сообщество единомышленников, которые заботятся о своем здоровье с удовольствием!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <a href="tel:+79999999999" className="flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-xl font-bold hover:scale-105 transition">
-                <Icon name="Phone" size={20} />
-                +7 (999) 999-99-99
-              </a>
-              <a href="mailto:info@nutrition.ru" className="flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-xl font-bold hover:scale-105 transition">
-                <Icon name="Mail" size={20} />
-                info@nutrition.ru
-              </a>
-              <a href="https://t.me/username" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-xl font-bold hover:scale-105 transition">
-                <Icon name="Send" size={20} />
-                Telegram
-              </a>
-            </div>
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Контакты
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <Card className="bg-card border-border">
+              <CardContent className="p-8">
+                <div className="text-center mb-8">
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Свяжитесь с нами удобным для вас способом. Наши специалисты помогут подобрать оборудование 
+                    и ответят на все вопросы о майнинге.
+                  </p>
+                </div>
+                
+                <div className="grid gap-6">
+                  <a 
+                    href="https://t.me/yourtelegram" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg border border-border hover:border-primary transition bg-muted/50 hover:bg-muted"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                      <Icon name="MessageCircle" size={24} className="text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold mb-1">Telegram</div>
+                      <div className="text-sm text-muted-foreground">Быстрая связь в мессенджере</div>
+                    </div>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground" />
+                  </a>
+
+                  <a 
+                    href="https://avito.ru/yourprofile" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg border border-border hover:border-primary transition bg-muted/50 hover:bg-muted"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                      <Icon name="ShoppingBag" size={24} className="text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold mb-1">Авито</div>
+                      <div className="text-sm text-muted-foreground">Наши объявления на Авито</div>
+                    </div>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground" />
+                  </a>
+
+                  <div className="flex items-center gap-4 p-4 rounded-lg border border-border bg-muted/50">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                      <Icon name="Phone" size={24} className="text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold mb-1">Телефон</div>
+                      <div className="text-sm text-muted-foreground">+7 (999) 123-45-67</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 p-4 rounded-lg border border-border bg-muted/50">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                      <Icon name="Mail" size={24} className="text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold mb-1">Email</div>
+                      <div className="text-sm text-muted-foreground">info@cryptominerpro.ru</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 text-center">
+                  <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                    <Icon name="Send" size={20} className="mr-2" />
+                    Оставить заявку
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gradient-to-r from-primary to-secondary text-white py-12 px-4">
-        <div className="container mx-auto text-center space-y-4">
-          <div className="text-2xl font-bold">Здоровое Питание</div>
-          <p className="opacity-80">Александр Самолучшев — Интегративный нутрициолог</p>
-          <div className="flex gap-6 justify-center">
-            <button onClick={() => scrollToSection('about')} className="hover:opacity-80 transition">Обо мне</button>
-            <button onClick={() => scrollToSection('services')} className="hover:opacity-80 transition">Услуги</button>
-            <button onClick={() => scrollToSection('pricing')} className="hover:opacity-80 transition">Тарифы</button>
-            <button onClick={() => scrollToSection('contacts')} className="hover:opacity-80 transition">Контакты</button>
+      <footer className="bg-card/50 border-t border-border py-12 px-4">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Icon name="Cpu" size={28} className="text-primary" />
+                <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  CryptoMiner Pro
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Официальный поставщик майнингового оборудования ANTMINER и WHATSMINER
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Продукция</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#antminer" className="hover:text-primary transition">ANTMINER</a></li>
+                <li><a href="#whatsminer" className="hover:text-primary transition">WHATSMINER</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Информация</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#about" className="hover:text-primary transition">О нас</a></li>
+                <li><a href="#payment" className="hover:text-primary transition">Оплата и доставка</a></li>
+                <li><a href="#contacts" className="hover:text-primary transition">Контакты</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Связаться</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>+7 (999) 123-45-67</li>
+                <li>info@cryptominerpro.ru</li>
+                <li className="flex gap-4 mt-4">
+                  <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
+                    <Icon name="MessageCircle" size={20} />
+                  </a>
+                  <a href="https://avito.ru/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
+                    <Icon name="ShoppingBag" size={20} />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="text-sm opacity-60 pt-4">
-            © 2025 Все права защищены
+
+          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; 2024 CryptoMiner Pro. Все права защищены.</p>
           </div>
         </div>
       </footer>
