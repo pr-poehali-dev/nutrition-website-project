@@ -31,6 +31,22 @@ const Index = () => {
 
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden border border-primary/30">
+              <img 
+                src="https://cdn.poehali.dev/projects/edc8d123-107a-4322-b4c6-9be434859e1f/files/436476ff-34d6-421d-ba8a-946c462d3abc.jpg" 
+                alt="ANTMINER оборудование" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="relative rounded-xl overflow-hidden border border-primary/30">
+              <img 
+                src="https://cdn.poehali.dev/projects/edc8d123-107a-4322-b4c6-9be434859e1f/files/c3288cee-c543-4f1b-b2e9-879697ee8f97.jpg" 
+                alt="WHATSMINER оборудование" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
             Майнинговое оборудование ANTMINER & WHATSMINER
           </h1>
@@ -133,9 +149,21 @@ const Index = () => {
 
       <section id="antminer" className="py-20 px-4 bg-card/50">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            ANTMINER
-          </h2>
+          <div className="text-center mb-8">
+            <div className="relative max-w-2xl mx-auto mb-8 rounded-xl overflow-hidden border border-primary/30">
+              <img 
+                src="https://cdn.poehali.dev/projects/edc8d123-107a-4322-b4c6-9be434859e1f/files/436476ff-34d6-421d-ba8a-946c462d3abc.jpg" 
+                alt="ANTMINER оборудование" 
+                className="w-full h-80 object-cover"
+              />
+            </div>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              ANTMINER
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              Профессиональное майнинговое оборудование от Bitmain с высокой производительностью и надежностью
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-card border-border hover:border-primary transition">
               <CardContent className="p-6">
@@ -220,9 +248,21 @@ const Index = () => {
 
       <section id="whatsminer" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            WHATSMINER
-          </h2>
+          <div className="text-center mb-8">
+            <div className="relative max-w-2xl mx-auto mb-8 rounded-xl overflow-hidden border border-primary/30">
+              <img 
+                src="https://cdn.poehali.dev/projects/edc8d123-107a-4322-b4c6-9be434859e1f/files/c3288cee-c543-4f1b-b2e9-879697ee8f97.jpg" 
+                alt="WHATSMINER оборудование" 
+                className="w-full h-80 object-cover"
+              />
+            </div>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              WHATSMINER
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              Энергоэффективные майнеры от MicroBT с оптимальным соотношением мощности и энергопотребления
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-card border-border hover:border-primary transition">
               <CardContent className="p-6">
